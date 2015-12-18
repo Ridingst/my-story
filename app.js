@@ -35,8 +35,13 @@ io.listen(server);
         socket.emit('url', {'url': 'http://192.168.1.5:' + server.address().port});
         console.log('connection received');
 
+        socket.on('new-room', function (data){
+            console.log('new room registered: ' + data.room);
+            socket.join(data.room);
+        });
+
     	socket.on('slide-changed', function (data){
     		console.log('slide change issued')
-    		listener.emit('navigate', { hash: data.hash });
+    		listener.in(data.room).emit('navigate', { hash: data.hash });
     	});
 	});

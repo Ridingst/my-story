@@ -3,6 +3,7 @@
   <head>
     <script src="/socket.io/socket.io.js"></script>
     <script src="public/js/qrcode.js"></script>
+    <script src="public/js/GetUrlParams.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
 
     <title>Thomas Ridings | A little about me</title>
@@ -332,20 +333,18 @@
 		</script>
 		
 		<script>
-		var qrURL = "";
-    	var socket = io.connect();
+		var socket = io.connect();
     	socket.on('message', function(data){
     		console.log(data.message);
 		});
-		socket.on('url', function(data){
-			qrURL = data.url
-			console.log('qrURL: ' + qrURL);
-			var qrcode = new QRCode(document.getElementById("qrcode"));
-			qrcode.makeCode(qrURL);
-		})
-		</script>
 
-		<script>
+		// Register room id
+		$( document ).ready(function() {
+			socket.emit('new-room', {
+				'room': room,
+			});
+		});
+
 		var ignore= false;
 
 		$(window).on('hashchange', function(){
@@ -358,11 +357,11 @@
 				// You will learn more about "ignore" in a bit
 				return;
 			}
-			var socket = io.connect();
 			var hash = window.location.hash;
 
 			socket.emit('slide-changed', {
 				hash: hash,
+				'room': room,
 			});
 		});
 
@@ -384,6 +383,15 @@
 				},100);
 
 			});
+		var room = getUrlParameter('room')
+		if (room == undefined){
+			//create new ns and qrcode
+			room = Math.round(Math.random()*1000000);
+			var qrURL = AddUrlParameter(window.location.href, 'room', room);
+			var qrcode = new QRCode(document.getElementById("qrcode"));
+			qrcode.makeCode(qrURL);
+		}
+		console.log('room: ' + room)
 		</script>
 
 	</body>
