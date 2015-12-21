@@ -1,8 +1,10 @@
-FROM node:argon
+FROM node:5.3.0
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-COPY . in /usr/src/app/
+
+COPY package.json /usr/src/app/
 RUN npm install
-COPY . in /usr/src/app
-EXPOSE 8001/tcp
-CMD ["node" "/usr/src/app/app.js"]
+COPY . /usr/src/app
+
+CMD ["node","/usr/src/app/app.js"]

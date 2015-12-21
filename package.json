@@ -2,6 +2,8 @@
   "name": "my-story",
   "version": "0.0.1",
   "description": "Thomas Ridings - Project History",
+  "main": "app.js",
+  "start": "node app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +23,6 @@
     "url": "https://github.com/Ridingst/my-story/issues"
   },
   "homepage": "https://github.com/Ridingst/my-story#readme",
-  "devDependencies": {}
+  "devDependencies": {},
+  "homepage": "https://github.com/Ridingst/my-story#readme"
 }
