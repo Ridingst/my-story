@@ -7,6 +7,6 @@ COPY package.json /usr/src/app/
 RUN npm install
 COPY . /usr/src/app
 
-EXPOSE -p 8001
+EXPOSE 8001:8001
 
 CMD ["node","/usr/src/app/app.js"]
