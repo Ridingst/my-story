@@ -144,11 +144,16 @@ html
 							xsmall #{duration}
 							xsmall
 								| #{description}
-
 				
-				each job in pagecontent
+				each job in jobcontent
 					section
 						+job(job.getText('job.Role'), job.getText('job.description'), job.getImage('job.image').url)
+						
+						each project in projectcontent
+							- var tags = project.tags
+							each tag in tags
+								if tag == job.getText('job.label')
+									+project(project.getText('project.Role'), project.getText('project.description'), project.getText('project.duration'), project.getImage('project.logo').url)
 
 				section(style='text-align: left;')
 					h1 THE END

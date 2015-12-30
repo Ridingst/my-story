@@ -34,21 +34,33 @@ function handleError(err, req, res) {
   if (err.status == 404) {
     res.status(404).send("404 not found");
   } else {
-    res.status(500).send("Error 500: " + err.message);
+    res.status(500).send("Error 500");
   }
 }
 
 // Routes
 app.route('/').get(function(req, res) {
+  var j = prismic.withContext(req,res);
   var p = prismic.withContext(req,res);
-  p.query(prismic.Predicates.at('document.type', 'job'),
+  var jobs, projects;
+  j.query(prismic.Predicates.at('document.type', 'job'),
     { orderings :'[my.job.order desc]' },
   function (err, pagecontent) {
     if(err) return handleError(err, req, res);
+    jobs = pagecontent.results;
+  });
+  p.query(prismic.Predicates.at('document.type', 'project'),
+    { orderings :'[my.project.order desc]' },
+  function (err, pagecontent) {
+    if(err) return handleError(err, req, res);
+    projects = pagecontent.results;
+    console.log(projects);
     res.render('index', {
-      pagecontent: pagecontent.results
+      jobcontent: jobs,
+      projectcontent: projects
     });
   });
+
 });
 
 
