@@ -146,7 +146,7 @@ html
 								| #{description}
 
 				section
-					+job('Technology Consultant', 'I have held a number of roles on a variety of large-scale IT projects within Financial Services (6 months) and Telecommunications (2 years). For the most part, my experience has been working within a large telecommunications client as part of a technology strategy team.', "./public/images/2000px-IBM_logo.svg.png")
+					+job(pagecontent.getText('job.Role'), pagecontent.getText('job.description'), pagecontent.getImage('job.image').url)
 
 					+project('Vodadfone Italy Digital Transformation', 'I worked as part of an eight-person team to produce a digital strategy for Vodafone Italy. We used design thinking to define a target set of customer journeys and a three-year transformation (both organisational and technology) roadmap required to enable them. This was presented back to a C-level audience with 12, 24 & 36-month visions of the customer journey that would be realised along the way. I contributed to the customer journey work, supported a senior architect in assesing the existing OSS/BSS landscape, helped define the IT roadmap and created a proposed organisation structure for the programme.', '3 months',"./public/images/Vodafone_logo_svg.png")
 
