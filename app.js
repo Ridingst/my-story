@@ -41,10 +41,12 @@ function handleError(err, req, res) {
 // Routes
 app.route('/').get(function(req, res) {
   var p = prismic.withContext(req,res);
-  p.getByUID('job', 'ibm', function (err, pagecontent) {
+  p.query(prismic.Predicates.at('document.type', 'job'),
+    { orderings :'[my.job.order desc]' },
+  function (err, pagecontent) {
     if(err) return handleError(err, req, res);
     res.render('index', {
-      pagecontent: pagecontent
+      pagecontent: pagecontent.results
     });
   });
 });
