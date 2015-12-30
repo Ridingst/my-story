@@ -2,19 +2,68 @@ var express = require('express');
 var app = express();
 var jade = require('jade');
 var io = require('socket.io');
+var prismic = require('express-prismic').Prismic;
+var configuration = require('./prismic-configuration').Configuration;
+var errorHandler = require('errorhandler');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var http = require('http');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
+prismic.init(configuration);
 
 
 // Set jade as render engine
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+app.use(bodyParser());
+app.use(methodOverride());
+app.use(cookieParser('2404'));
+app.use(session({secret: '2404', saveUninitialized: true, resave: true}));
 
 // Expose Public Folder
 app.use('/public', express.static(__dirname + '/public'));
 
-// Create Index route
-app.get('/', function (req, res) {
-    res.render('index');
+app.use(errorHandler());
+
+function handleError(err, req, res) {
+  if (err.status == 404) {
+    res.status(404).send("404 not found");
+  } else {
+    res.status(500).send("Error 500");
+  }
+}
+
+// Routes
+app.route('/').get(function(req, res) {
+  var j = prismic.withContext(req,res);
+  var p = prismic.withContext(req,res);
+  var jobs, projects;
+  j.query(prismic.Predicates.at('document.type', 'job'),
+    { orderings :'[my.job.order desc]' },
+  function (err, pagecontent) {
+    if(err) return handleError(err, req, res);
+    jobs = pagecontent.results;
+  });
+  p.query(prismic.Predicates.at('document.type', 'project'),
+    { orderings :'[my.project.order desc]' },
+  function (err, pagecontent) {
+    if(err) return handleError(err, req, res);
+    projects = pagecontent.results;
+    console.log(projects);
+    res.render('index', {
+      jobcontent: jobs,
+      projectcontent: projects
+    });
+  });
+
 });
+
+
 
 // Spark the HTTP Server up
 var server = app.listen(8001, function() {
