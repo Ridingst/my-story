@@ -1,3 +1,151 @@
-include home.html
-link(rel="stylesheet" href="public/css/reveal.css")
-link(rel="stylesheet" href="public/css/white.css")
+doctype html
+html
+	head
+		script(src='/socket.io/socket.io.js')
+		script(src='public/js/qrcode.js')
+		script(src='public/js/GetUrlParams.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js')
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js')
+
+		title Thomas Ridings | A little about me
+
+		meta(name='description', content='Thomas Ridings, My Work')
+		meta(name='author', content='Thomas Ridings')
+		meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
+		script(src='public/js/head.js')
+		link(rel="stylesheet" href="public/css/reveal.css")
+		link(rel="stylesheet" href="public/css/white.css")
+
+	body
+		.se-pre-con
+		.reveal
+
+			.slides
+				section
+					p
+						strong
+							a.orange [
+							|  THOMAS RIDINGS 
+							a.orange ]
+						|  my 
+						strong.orange working
+						|  life so_far 
+						a.orange /
+						p
+							small
+							a
+							| The 
+							a.orange story
+							|  of_me
+
+				section
+					p
+						strong
+							a.orange [
+							| CONNECT 
+							a.orange ]
+						| let_the 
+						strong.orange story
+						| begin 
+						a.orange /
+					p
+						small
+							a Once upon a 
+							a.orange time
+						#qrcode
+
+				section
+					p
+						strong
+							a.orange [
+							| ABOUT ME 
+							a.orange ]
+					p
+						xsmall
+							a
+								| I am a business-minded engineer with experience of digital strategy design and IT project delivery across Financial Services and Telecommunications. I currently work as a strategy consultant for IBM; helping large enterprises to redefine/reimagine their customer (and employee) experiences and engineer technology platforms to enable.
+								br
+								br
+								| I am a graduate of Engineering & Business Management from Warwick University, an avid techie, a keen lacrosse player and an amateur chef.
+
+				section
+					p
+						strong
+							a.orange [
+							|  EDUCATION 
+							a.orange ]
+							| University of Warwick
+							a.orange  /
+					p
+						small
+							|General Engineering
+							a.orange  & 
+							| Business Management (MEng)<br>
+							xsmall 2008 - 2012<br>
+								| 3
+								sup rd
+								|  Year Dissertation,Modelling Wireless Relay Networks through Composite Channels
+								a.orange  : 
+								| 1
+								sup st
+								|  Class
+								br
+								| 4
+								sup th
+								|  Year Dissertation, Multi-Scale Modelling of the Pulmonary Airways
+								a.orange  : 
+								| 1
+								sup st
+								|  Class
+								br
+					p
+						xsmall
+							strong Awards 
+							a.orange  / 
+							br
+							| University of Warwick 
+							a.orange Sportsman
+							|  of the Year 2010
+							br
+							| University of Warwick Olympic 
+							a.orange Ambassador
+							|  2011 - 2012
+
+				mixin job(title, description, logoSrc)
+					section
+						p
+						strong
+							a.orange [
+							| WORK 
+							a.orange ]
+							|  #{title}
+							a.orange  /
+						p
+						img.plain.logo(src='#{logoSrc}')
+						p
+						small
+							strong Description 
+							a.orange  / 
+						xsmall
+							| #{description}
+						xsmall.orange
+							br
+							| See below for a detailed project history and my roles across...
+
+				section
+					+job('Technology Consultant', 'I have held a number of roles on a variety of large-scale IT projects within Financial Services (6 months) and Telecommunications (2 years). For the most part, my experience has been working within a large telecommunications client as part of a technology strategy team.', "./public/images/2000px-IBM_logo.svg.png")
+
+				section(style='text-align: left;')
+					h1 THE END
+					p
+					small also available in pdf
+					|  
+					a(href='public/ThomasRidings-Dec2015.pdf')
+						small.orange click here
+
+		script(src='public/js/head.min.js')
+		script(src='public/js/reveal.js')
+		script(src='public/js/footer.js')

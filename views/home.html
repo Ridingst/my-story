@@ -1,432 +1,277 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="public/js/qrcode.js"></script>
-    <script src="public/js/GetUrlParams.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 
-    <title>Thomas Ridings | A little about me</title>
+<div class="se-pre-con"></div>
+<div class="reveal">
 
-    <meta name="description" content="Thomas Ridings, My Work">
-	<meta name="author" content="Thomas Ridings">
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+		<section>
+			<p>
+			<strong><a class="orange">[</a> THOMAS RIDINGS <a class="orange">]</a></strong> my <strong class="orange">working</strong> life so_far <a class="orange">/</a></p>
+			<p>
+				<small><a>The <a class="orange">story</a> of_me</a></small>
+			</p>
+		</section>
 
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<section>
+			<p>
+			<strong><a class="orange">[</a> CONNECT <a class="orange">]</a></strong> let_the <strong class="orange">story</strong> begin <a class="orange">/</a></p>
+			<p>
+				<small><a>Once upon a </a><a class="orange">time</a></small>
+			</p>
+			<p>
+			<!-- <xsmall>Also available to download...</xsmall> -->
+			</p>
+			<div id="qrcode"></div>
+		</section>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<section>
+			<p>
+			<strong><a class="orange">[</a> ABOUT ME <a class="orange">]</a></strong>
+			</p>
+			<p>
+				<xsmall><a>I am a business-minded engineer with experience of digital strategy design and IT project delivery across Financial Services and Telecommunications. I currently work as a strategy consultant for IBM; helping large enterprises to redefine/reimagine their customer (and employee) experiences and engineer technology platforms to enable.<br/><br/>
+				I am a graduate of Engineering & Business Management from Warwick University, an avid techie, a keen lacrosse player and an amateur chef.
+				</a></xsmall>
+			</p>
+		</section>
 
-	<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'public/css/print/pdf.css' : 'public/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+		<section>
+			<p>
+			<strong><a class="orange">[</a> EDUCATION <a class="orange">]</a>
+			University of Warwick<a class="orange"> /</a></strong>
+			</p>
+			<p>
+				<small>General Engineering<a class="orange"> & </a>Business Management (MEng)
+				<xsmall>2008 - 2012
+				<br/>
+				3<sup>rd</sup> Year Dissertation, Modelling Wireless Relay Networks through Composite Channels<a class="orange"> : </a>1<sup>st</sup> Class<br/>
+				4<sup>th</sup> Year Dissertation, Multi-Scale Modelling of the Pulmonary Airways<a class="orange"> : </a>1<sup>st</sup> Class<br></xsmall></small></p>
+			<p>
+				<xsmall><strong>Awards </strong><a class="orange"> / </a>
+				<br/>
+				University of Warwick <a class="orange">Sportsman</a> of the Year 2010<br/>
+				University of Warwick Olympic <a class="orange">Ambassador</a> 2011 - 2012
+				</xsmall>
+			</p>
+		</section>
 
-		<!-- Google Analytics -->
-		<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<section>
+			<section>
+				<p>
+				<strong><a class="orange">[</a> WORK <a class="orange">]</a>
+				 Technology Consultant<a class="orange"> /</a></strong>
+				</p>
+				<p>
+				<img class="plain logo" src="./public/images/2000px-IBM_logo.svg.png">
+				</p>
+				<p>
+					<small><strong>Description </strong><a class="orange"> / </a></small>
+					<xsmall>
+					I have held a number of roles on a variety of large-scale IT projects within Financial Services (6 months) and Telecommunications (2 years). For the most part, my experience has been working within a large telecommunications client as part of a technology strategy team.</xsmall>
+					<xsmall class="orange">
+					<br/>
+					See below for a detailed project history and my roles across...
+					</xsmall>
+				</p>
+				</section>
 
-		ga('create', 'UA-71588093-1', 'auto');
-		ga('send', 'pageview');
-		</script>
-<!-- End Google Analytics -->
-
-	<!--[if lt IE 9]>
-	<script src="public/js/html5shiv.js"></script>
-	<![endif]-->
-
-  </head>
-
-  <body>
-  		<div class="se-pre-con"></div>
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+				<!-- WORK, Vodafone Italy Transformation-->
 				<section>
-					<p>
-					<strong><a class="orange">[</a> THOMAS RIDINGS <a class="orange">]</a></strong> my <strong class="orange">working</strong> life so_far <a class="orange">/</a></p>
-					<p>
-						<small><a>The <a class="orange">story</a> of_me</a></small>
-					</p>
+				<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
+				<p>
+				<a>Vodadfone Italy Digital Transformation</a>
+				<br/>
+				<xsmall>3 months</xsmall>
+				</p>
+				<p>
+					<xsmall>
+					I worked as part of an eight-person team to produce a digital strategy for Vodafone Italy. We used design thinking to define a target set of customer journeys and a three-year transformation (both organisational and technology) roadmap required to enable them. This was presented back to a C-level audience with 12, 24 & 36-month visions of the customer journey that would be realised along the way. I contributed to the customer journey work, supported a senior architect in assesing the existing OSS/BSS landscape, helped define the IT roadmap and created a proposed organisation structure for the programme.
+					</xsmall>
+				</p>
 				</section>
 
+				<!-- WORK, Vodafone Commercial Modelling-->
 				<section>
-					<p>
-					<strong><a class="orange">[</a> CONNECT <a class="orange">]</a></strong> let_the <strong class="orange">story</strong> begin <a class="orange">/</a></p>
-					<p>
-						<small><a>Once upon a </a><a class="orange">time</a></small>
-					</p>
-					<p>
-					<!-- <xsmall>Also available to download...</xsmall> -->
-					</p>
-					<div id="qrcode"></div>
+				<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
+				<p>
+				<a>Vodafone roup Commercial Modelling Platform<a>
+				<br/>
+				<xsmall>2 months</xsmall>
+				</p>
+				<p>
+					<xsmall>
+					 worked on a two-month engagement designing a platform to support the global Vodafone sales team. The platform encouraged collaboration between the sales and commercial teams when creating custom fixed/mobile contracts for global enterprise business customers. I helped to redefine the internal processes and created a high level solution, proposed architecture, project team structure, and contracted the delivery work with the client.
+					</xsmall>
+				</p>
 				</section>
 
+				<!-- WORK, Vodafone CPQ-->
 				<section>
-					<p>
-					<strong><a class="orange">[</a> ABOUT ME <a class="orange">]</a></strong>
-					</p>
-					<p>
-						<xsmall><a>I am a business-minded engineer with experience of digital strategy design and IT project delivery across Financial Services and Telecommunications. I currently work as a strategy consultant for IBM; helping large enterprises to redefine/reimagine their customer (and employee) experiences and engineer technology platforms to enable.<br/><br/>
-						I am a graduate of Engineering & Business Management from Warwick University, an avid techie, a keen lacrosse player and an amateur chef.
-						</a></xsmall>
-					</p>
+				<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
+				<p>
+				<a>Vodafone Group CPQ Strategy</a>
+				<br/>
+				<xsmall>2 months</xsmall>
+				</p>
+				<p>
+					<xsmall>
+					I developed an adoption strategy for the Vodafone Group Global Sales & Commercial Operations team to onboard a new CPQ (configure, price quote) tool. This involved conducting business & technology assessments across 6 of their local markets and developing technology roadmaps and business adoption strategies for each.
+					</xsmall>
+				</p>
 				</section>
 
+				<!-- WORK, Vodafone Video Analytics-->
 				<section>
-					<p>
-					<strong><a class="orange">[</a> EDUCATION <a class="orange">]</a>
-					University of Warwick<a class="orange"> /</a></strong>
-					</p>
-					<p>
-						<small>General Engineering<a class="orange"> & </a>Business Management (MEng)
-						<xsmall>2008 - 2012
-						<br/>
-						3<sup>rd</sup> Year Dissertation, Modelling Wireless Relay Networks through Composite Channels<a class="orange"> : </a>1<sup>st</sup> Class<br/>
-						4<sup>th</sup> Year Dissertation, Multi-Scale Modelling of the Pulmonary Airways<a class="orange"> : </a>1<sup>st</sup> Class<br></xsmall></small></p>
-					<p>
-						<xsmall><strong>Awards </strong><a class="orange"> / </a>
-						<br/>
-						University of Warwick <a class="orange">Sportsman</a> of the Year 2010<br/>
-						University of Warwick Olympic <a class="orange">Ambassador</a> 2011 - 2012
-						</xsmall>
-					</p>
+				<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
+				<p>
+				<a>Vodafone UK Video Analytics</a>
+				<br/>
+				<xsmall>3 months</xsmall>
+				</p>
+				<p>
+					<xsmall>
+					I supported a small team developing a Network Insight platform for Vodafone UK. The platform took log files from core network content management systems (ByteMobile) and created insight reports detailing customer experience metrics at a customer level (video start time, stalling ratio etc). I managed senior (C-2) stakeholders from across marketing, technology and network teams and presented the solution to a variety of audiences with a range of business and technology interests.
+					</xsmall>
+				</p>
 				</section>
 
+				<!-- WORK, Vodafone Social Media Analytics-->
 				<section>
-					<section>
-						<p>
-						<strong><a class="orange">[</a> WORK <a class="orange">]</a>
-						 Technology Consultant<a class="orange"> /</a></strong>
-						</p>
-						<p>
-						<img class="plain logo" src="./public/images/2000px-IBM_logo.svg.png">
-						</p>
-						<p>
-							<small><strong>Description </strong><a class="orange"> / </a></small>
-							<xsmall>
-							I have held a number of roles on a variety of large-scale IT projects within Financial Services (6 months) and Telecommunications (2 years). For the most part, my experience has been working within a large telecommunications client as part of a technology strategy team.</xsmall>
-							<xsmall class="orange">
-							<br/>
-							See below for a detailed project history and my roles across...
-							</xsmall>
-						</p>
-						</section>
-
-						<!-- WORK, Vodafone Italy Transformation-->
-						<section>
-						<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
-						<p>
-						<a>Vodadfone Italy Digital Transformation</a>
-						<br/>
-						<xsmall>3 months</xsmall>
-						</p>
-						<p>
-							<xsmall>
-							I worked as part of an eight-person team to produce a digital strategy for Vodafone Italy. We used design thinking to define a target set of customer journeys and a three-year transformation (both organisational and technology) roadmap required to enable them. This was presented back to a C-level audience with 12, 24 & 36-month visions of the customer journey that would be realised along the way. I contributed to the customer journey work, supported a senior architect in assesing the existing OSS/BSS landscape, helped define the IT roadmap and created a proposed organisation structure for the programme.
-							</xsmall>
-						</p>
-						</section>
-
-						<!-- WORK, Vodafone Commercial Modelling-->
-						<section>
-						<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
-						<p>
-						<a>Vodafone roup Commercial Modelling Platform<a>
-						<br/>
-						<xsmall>2 months</xsmall>
-						</p>
-						<p>
-							<xsmall>
-							 worked on a two-month engagement designing a platform to support the global Vodafone sales team. The platform encouraged collaboration between the sales and commercial teams when creating custom fixed/mobile contracts for global enterprise business customers. I helped to redefine the internal processes and created a high level solution, proposed architecture, project team structure, and contracted the delivery work with the client.
-							</xsmall>
-						</p>
-						</section>
-
-						<!-- WORK, Vodafone CPQ-->
-						<section>
-						<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
-						<p>
-						<a>Vodafone Group CPQ Strategy</a>
-						<br/>
-						<xsmall>2 months</xsmall>
-						</p>
-						<p>
-							<xsmall>
-							I developed an adoption strategy for the Vodafone Group Global Sales & Commercial Operations team to onboard a new CPQ (configure, price quote) tool. This involved conducting business & technology assessments across 6 of their local markets and developing technology roadmaps and business adoption strategies for each.
-							</xsmall>
-						</p>
-						</section>
-
-						<!-- WORK, Vodafone Video Analytics-->
-						<section>
-						<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
-						<p>
-						<a>Vodafone UK Video Analytics</a>
-						<br/>
-						<xsmall>3 months</xsmall>
-						</p>
-						<p>
-							<xsmall>
-							I supported a small team developing a Network Insight platform for Vodafone UK. The platform took log files from core network content management systems (ByteMobile) and created insight reports detailing customer experience metrics at a customer level (video start time, stalling ratio etc). I managed senior (C-2) stakeholders from across marketing, technology and network teams and presented the solution to a variety of audiences with a range of business and technology interests.
-							</xsmall>
-						</p>
-						</section>
-
-						<!-- WORK, Vodafone Social Media Analytics-->
-						<section>
-						<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
-						<p>
-						<a>Vodafone UK Social Intelligence Workshops</a>
-						<br/>
-						<xsmall>1 month</xsmall>
-						</p>
-						<p>
-							<xsmall>
-							I ran a series of thought leadership workshops to a variety of audiences across Vodafone on Social Intelligence; the idea of bringing social media data and insights into the heart of the BI decision making process. During this time I built a number of proof of concept social insight platforms to demonstrate potential value.
-							</xsmall>
-						</p>
-						</section>
-
-						<!-- WORK, Vodafone MDM-->
-						<section>
-						<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
-						<p>
-						<a>Vodafone UK Master Data Management Workstream Lead</a>
-						<br/>
-						<xsmall>12 months</xsmall>
-						</p>
-						<p>
-							<xsmall>
-							I was responsible for the planning, development and implementation of several projects within the BI domain. My responsibilities include; project initiation activities, requirement gathering, scope definition, process re-engineering and general project management.
-							</xsmall>
-						</p>
-						</section>
-						
-
-						<!-- WORK, Vodafone BI Analyst -->
-						<section>
-						<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
-						<p>
-						<a>Vodafone UK BI Analyst</a>
-						<br/>
-						<xsmall>6 months</xsmall>
-						</p>
-						<p>
-							<xsmall>
-							I was responsible for the planning, development and implementation of several projects within the BI domain. My responsibilities include; project initiation activities, requirement gathering, scope definition, process re-engineering and general project management.
-							</xsmall>
-						</p>
-						</section>
-
-						<!-- WORK, RBS-->
-						<section>
-						<img class="plain logo" src="./public/images/Royal_Bank_of_Scotland_Logo.svg.png">
-						<p>
-						<a>RBS Test Team Lead</a>
-						<br/>
-						<xsmall>6 months</xsmall>
-						</p>
-						<p>
-							<xsmall>
-							I was a test manager on a large scale HR transformation programme developed on the PeopleSoft software platform. I created test scripts, managed execution plans and triaged defects for a 10 person SIT team.
-							</xsmall>
-						</p>
-						</section>
-
-						<!-- WORK, Warwick Univeristy Campus Lead-->
-						<section>
-						<img class="plain logo" src="./public/images/University_of_Warwick_logo_2015_with_descriptor.svg.png">
-						<p>
-						<a>Warwick Campus Recruitment Lead</a>
-						<br/>
-						<xsmall>12 months</xsmall>
-						</p>
-						<p>
-							<xsmall>
-							During my time at IBM I also acted as the University of Warwick Campus Lead. This involved working with the UK recruitment team to promote IBM on the university campus.
-							</xsmall>
-						</p>
-						</section>
+				<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
+				<p>
+				<a>Vodafone UK Social Intelligence Workshops</a>
+				<br/>
+				<xsmall>1 month</xsmall>
+				</p>
+				<p>
+					<xsmall>
+					I ran a series of thought leadership workshops to a variety of audiences across Vodafone on Social Intelligence; the idea of bringing social media data and insights into the heart of the BI decision making process. During this time I built a number of proof of concept social insight platforms to demonstrate potential value.
+					</xsmall>
+				</p>
 				</section>
 
+				<!-- WORK, Vodafone MDM-->
 				<section>
-					<section>
-						<p>
-						<strong><a class="orange">[</a> WORK <a class="orange">]</a>
-						 Digital Consultant<a class="orange"> /</a></strong>
-						</p>
-						<p>
-						<img class="plain logo" src="./public/images/1a109a2.png">
-						</p>
-						<p>
-							<small><strong>Description </strong><a class="orange"> / </a></small>
-							<xsmall>
-							Between September 2009 and July 2013 I worked as a freelance digital consultant with a wide variety of businesses ranging from a small start-up professional golf tour to a firm of professional accountants.
-							</xsmall>
-						</p>
-					</section>
+				<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
+				<p>
+				<a>Vodafone UK Master Data Management Workstream Lead</a>
+				<br/>
+				<xsmall>12 months</xsmall>
+				</p>
+				<p>
+					<xsmall>
+					I was responsible for the planning, development and implementation of several projects within the BI domain. My responsibilities include; project initiation activities, requirement gathering, scope definition, process re-engineering and general project management.
+					</xsmall>
+				</p>
+				</section>
+				
 
-					<!-- WORK, DTE Group
-					<section>
-					<img class="plain" src="">
-					DTE Connect
-					</section>
-
-					WORK, 1836 Tour
-					<section>
-					<img class="plain" src="">
-					1836 Tour
-					</section>
-
-					WORK, Nugent Group
-					<section>
-					<img class="plain" src="">
-					Nugent Group
-					</section>
-					-->
-
+				<!-- WORK, Vodafone BI Analyst -->
+				<section>
+				<img class="plain logo" src="./public/images/Vodafone_logo_svg.png">
+				<p>
+				<a>Vodafone UK BI Analyst</a>
+				<br/>
+				<xsmall>6 months</xsmall>
+				</p>
+				<p>
+					<xsmall>
+					I was responsible for the planning, development and implementation of several projects within the BI domain. My responsibilities include; project initiation activities, requirement gathering, scope definition, process re-engineering and general project management.
+					</xsmall>
+				</p>
 				</section>
 
-				<!-- <section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section> -->
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p><small>also available in pdf</small>
-					<a href="public/ThomasRidings-Dec2015.pdf"><small class="orange">click here</small></a></p>
+				<!-- WORK, RBS-->
+				<section>
+				<img class="plain logo" src="./public/images/Royal_Bank_of_Scotland_Logo.svg.png">
+				<p>
+				<a>RBS Test Team Lead</a>
+				<br/>
+				<xsmall>6 months</xsmall>
+				</p>
+				<p>
+					<xsmall>
+					I was a test manager on a large scale HR transformation programme developed on the PeopleSoft software platform. I created test scripts, managed execution plans and triaged defects for a 10 person SIT team.
+					</xsmall>
+				</p>
 				</section>
 
-			</div>
+				<!-- WORK, Warwick Univeristy Campus Lead-->
+				<section>
+				<img class="plain logo" src="./public/images/University_of_Warwick_logo_2015_with_descriptor.svg.png">
+				<p>
+				<a>Warwick Campus Recruitment Lead</a>
+				<br/>
+				<xsmall>12 months</xsmall>
+				</p>
+				<p>
+					<xsmall>
+					During my time at IBM I also acted as the University of Warwick Campus Lead. This involved working with the UK recruitment team to promote IBM on the university campus.
+					</xsmall>
+				</p>
+				</section>
+		</section>
 
-		</div>
+		<section>
+			<section>
+				<p>
+				<strong><a class="orange">[</a> WORK <a class="orange">]</a>
+				 Digital Consultant<a class="orange"> /</a></strong>
+				</p>
+				<p>
+				<img class="plain logo" src="./public/images/1a109a2.png">
+				</p>
+				<p>
+					<small><strong>Description </strong><a class="orange"> / </a></small>
+					<xsmall>
+					Between September 2009 and July 2013 I worked as a freelance digital consultant with a wide variety of businesses ranging from a small start-up professional golf tour to a firm of professional accountants.
+					</xsmall>
+				</p>
+			</section>
 
-		<script src="public/js/head.min.js"></script>
-		<script src="public/js/reveal.js"></script>
+			<!-- WORK, DTE Group
+			<section>
+			<img class="plain" src="">
+			DTE Connect
+			</section>
 
-		<script>
-  		$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");;
-		});
- 		</script>
+			WORK, 1836 Tour
+			<section>
+			<img class="plain" src="">
+			1836 Tour
+			</section>
 
-		<script>
+			WORK, Nugent Group
+			<section>
+			<img class="plain" src="">
+			Nugent Group
+			</section>
+			-->
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+		</section>
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+		<!-- <section>
+			<h2>Clever Quotes</h2>
+			<p>
+				These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+				&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+			</p>
+			<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+				&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+				reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+			</blockquote>
+		</section> -->
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'public/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'public/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'public/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'public/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'public/plugin/zoom-js/zoom.js', async: true },
-					{ src: 'public/plugin/notes/notes.js', async: true }
-				]
-			});
+		<section style="text-align: left;">
+			<h1>THE END</h1>
+			<p><small>also available in pdf</small>
+			<a href="public/ThomasRidings-Dec2015.pdf"><small class="orange">click here</small></a></p>
+		</section>
 
-		</script>
-		
-		<script>
-		var socket = io.connect();
-    	socket.on('message', function(data){
-    		console.log(data.message);
-		});
+	</div>
 
-		// Register room id
-		$( document ).ready(function() {
-			socket.emit('new-room', {
-				'room': room,
-			});
-		});
+</div>
 
-		var ignore= false;
-
-		$(window).on('hashchange', function(){
-
-			// Notify other clients that we have navigated to a new slide
-			// by sending the "slide-changed" message to socket.io
-
-			if(ignore){
-				// You will learn more about "ignore" in a bit
-				return;
-			}
-			console.log('slide change initiated: ' + window.location.hash)
-			var hash = window.location.hash;
-
-			socket.emit('slide-changed', {
-				hash: hash,
-				'room': room,
-			});
-			ga('send', {
-  			  hitType: 'event',
-			  eventCategory: 'navigation',
-			  eventAction: 'hashchange',
-			  eventLabel: hash
-			});
-		});
-
-		socket.on('navigate', function(data){
-	
-				// Another device has changed its slide. Change it in this browser, too:
-
-				window.location.hash = data.hash;
-				console.log('External Naviagton Received: ' + data.hash)
-
-				// The "ignore" variable stops the hash change from
-				// triggering our hashchange handler above and sending
-				// us into a never-ending cycle.
-
-				ignore = true;
-
-				setInterval(function () {
-					ignore = false;
-				},100);
-
-			});
-		var room = getUrlParameter('room')
-		if (room == undefined){
-			//create new ns and qrcode
-			room = Math.round(Math.random()*1000000);
-			var qrURL = AddUrlParameter(window.location.href, 'room', room);
-			var qrcode = new QRCode(document.getElementById("qrcode"));
-			qrcode.makeCode(qrURL);
-		} else {
-			ga('send', {
-  			  hitType: 'event',
-			  eventCategory: 'session',
-			  eventAction: 'joined',
-			  eventLabel: room
-			});
-		}
-		console.log('room: ' + room)
-		</script>
-
-	</body>
-</html>
+<script src="public/js/head.min.js"></script>
+<script src="public/js/reveal.js"></script>
+<script src="public/js/footer.js"></script>
