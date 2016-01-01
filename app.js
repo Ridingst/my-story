@@ -12,6 +12,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var async = require('async');
+
+var jobs, projects;
 
 prismic.init(configuration);
 
@@ -39,7 +42,7 @@ function handleError(err, req, res) {
 }
 
 // Routes
-app.route('/').get(function(req, res) {
+/*app.route('/').get(function(req, res) {
   var j = prismic.withContext(req,res);
   var p = prismic.withContext(req,res);
   var jobs, projects;
@@ -60,6 +63,44 @@ app.route('/').get(function(req, res) {
     });
   });
 
+});
+*/
+app.route('/').get(function(req, res) {
+    console.log('get request received');
+    async.parallel([
+            //Load jobs
+            function(callback) {
+                console.log('loading jobs')
+                var j = prismic.withContext(req,res);
+                
+                j.query(prismic.Predicates.at('document.type', 'job'),
+                    { orderings :'[my.job.order desc]' },
+                  function (err, pagecontent) {
+                    if(err) return handleError(err, req, res);
+                    jobs = pagecontent.results;
+                    console.log('jobs received from prismic');
+                    callback();
+                  });
+            },
+            //Load projects
+            function(callback) {
+                console.log('loading projects')
+                var p = prismic.withContext(req,res);
+
+                p.query(prismic.Predicates.at('document.type', 'project'),
+                    { orderings :'[my.project.order desc]' },
+                  function (err, pagecontent) {
+                    if(err) return handleError(err, req, res);
+                    projects = pagecontent.results;
+                    console.log('projects received from prismic');
+                    callback();
+                  });
+
+            }
+        ], function(err) { //This function gets called after the two tasks have called their "task callbacks"
+            console.log('rendering index page');
+            res.render('index', { jobcontent: jobs, projectcontent: projects });
+        });
 });
 
 
