@@ -21,6 +21,23 @@
 		]
 	});
 
+var room = getUrlParameter('room')
+if (room == undefined){
+	//create new ns and qrcode
+	room = Math.round(Math.random()*1000000);
+	var qrURL = AddUrlParameter(window.location.href, 'room', room);
+	var qrcode = new QRCode(document.getElementById("qrcode"));
+	qrcode.makeCode(qrURL);
+} else {
+	ga('send', {
+		  hitType: 'event',
+	  eventCategory: 'session',
+	  eventAction: 'joined',
+	  eventLabel: room
+	});
+};
+console.log('room: ' + room)
+
 var socket = io.connect();
 socket.on('message', function(data){
 	console.log(data.message);
@@ -77,22 +94,6 @@ socket.on('navigate', function(data){
 		},100);
 
 	});
-var room = getUrlParameter('room')
-if (room == undefined){
-	//create new ns and qrcode
-	room = Math.round(Math.random()*1000000);
-	var qrURL = AddUrlParameter(window.location.href, 'room', room);
-	var qrcode = new QRCode(document.getElementById("qrcode"));
-	qrcode.makeCode(qrURL);
-} else {
-	ga('send', {
-		  hitType: 'event',
-	  eventCategory: 'session',
-	  eventAction: 'joined',
-	  eventLabel: room
-	});
-}
-console.log('room: ' + room)
 
 $(".se-pre-con").fadeOut("slow");
 });
