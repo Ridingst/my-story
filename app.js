@@ -54,7 +54,6 @@ app.route('/').get(function(req, res) {
   function (err, pagecontent) {
     if(err) return handleError(err, req, res);
     projects = pagecontent.results;
-    console.log(projects);
     res.render('index', {
       jobcontent: jobs,
       projectcontent: projects
