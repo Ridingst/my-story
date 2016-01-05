@@ -14,7 +14,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var async = require('async');
 
-var jobs, projects;
+var jobs, projects, cv;
 
 prismic.init(configuration);
 
@@ -65,6 +65,12 @@ function handleError(err, req, res) {
 
 });
 */
+
+var resolver = function (ctx, doc, isBroken) {
+  if (isBroken) return '#broken';
+  return "/testing_url/" + doc.id + "/" + doc.slug + ( ctx.maybeRef ? '?ref=' + ctx.maybeRef : '' );
+};
+
 app.route('/').get(function(req, res) {
     console.log('get request received');
     async.parallel([
@@ -79,6 +85,19 @@ app.route('/').get(function(req, res) {
                     if(err) return handleError(err, req, res);
                     jobs = pagecontent.results;
                     console.log('jobs received from prismic');
+                    callback();
+                  });
+            },
+            //Load cv
+            function(callback) {
+                console.log('loading cv')
+                var c = prismic.withContext(req,res);
+                c.getByUID('cv', 'cv', 
+                  function (err, pagecontent) {
+                    if(err) return handleError(err, req, res);
+                    cv = pagecontent;
+                    //console.log('cv received from prismic');
+                    console.log("cv: %j", cv);
                     callback();
                   });
             },
@@ -97,9 +116,9 @@ app.route('/').get(function(req, res) {
                   });
 
             }
-        ], function(err) { //This function gets called after the two tasks have called their "task callbacks"
+        ], function(err) { //This function gets called after the tasks have called their "task callbacks"
             console.log('rendering index page');
-            res.render('index', { jobcontent: jobs, projectcontent: projects });
+            res.render('index', { jobcontent: jobs, projectcontent: projects, cvcontent: cv });
         });
 });
 

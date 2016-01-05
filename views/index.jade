@@ -143,6 +143,13 @@ html
 							xsmall #{duration}
 							xsmall
 								| #{description}
+
+				mixin cv(href)
+					p
+						small also available in pdf
+						|  
+						a(href='#{href}')
+							small.orange click here
 				
 				if (jobcontent)
 					each job in jobcontent
@@ -157,11 +164,8 @@ html
 
 				section(style='text-align: left;')
 					h1 THE END
-					p
-					small also available in pdf
-					|  
-					a(href='public/ThomasRidings-Dec2015.pdf')
-						small.orange click here
+					if (cvcontent)
+							+cv(cvcontent.getText('cv.title'))
 
 		script(src='public/js/head.min.js')
 		script(src='public/js/reveal.js')
