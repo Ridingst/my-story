@@ -14,7 +14,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var async = require('async');
 
-var jobs, projects, cv;
+var jobs, projects, cv, cvurl;
 
 prismic.init(configuration);
 
@@ -96,8 +96,7 @@ app.route('/').get(function(req, res) {
                   function (err, pagecontent) {
                     if(err) return handleError(err, req, res);
                     cv = pagecontent;
-                    //console.log('cv received from prismic');
-                    console.log("cv: %j", cv);
+                    cvurl = pagecontent.fragments['cv.cv'].value.file.url
                     callback();
                   });
             },
@@ -118,7 +117,7 @@ app.route('/').get(function(req, res) {
             }
         ], function(err) { //This function gets called after the tasks have called their "task callbacks"
             console.log('rendering index page');
-            res.render('index', { jobcontent: jobs, projectcontent: projects, cvcontent: cv });
+            res.render('index', { jobcontent: jobs, projectcontent: projects, cvcontent: cv, cvurl: cvurl });
         });
 });
 

@@ -165,7 +165,8 @@ html
 				section(style='text-align: left;')
 					h1 THE END
 					if (cvcontent)
-							+cv(cvcontent.getText('cv.title'))
+						if (cvurl)
+							+cv(cvurl)
 
 		script(src='public/js/head.min.js')
 		script(src='public/js/reveal.js')
