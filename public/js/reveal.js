@@ -1,9 +1,6 @@
 /*!
- * reveal.js
- * http://lab.hakim.se/reveal-js
- * MIT licensed
- *
- * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ * reveal.js framework
+ * Thomas Ridings My Story
  */
 (function( root, factory ) {
 	if( typeof define === 'function' && define.amd ) {
