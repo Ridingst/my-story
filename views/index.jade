@@ -30,24 +30,19 @@ html
 							a.orange [
 							|  THOMAS RIDINGS 
 							a.orange ]
-						|  my 
-						strong.orange working
-						|  life so_far 
-						a.orange /
 						p
-							small
-							a
-							| The 
-							a.orange story
-							|  of_me
-
+							|  my 
+							strong.orange work
+							|  so far 
+							a.orange /
+							
 				section
 					p
 						strong
 							a.orange [
 							| CONNECT 
 							a.orange ] 
-						| let_the 
+						| let the 
 						strong.orange story 
 						| begin 
 						a.orange /
@@ -66,52 +61,14 @@ html
 					p
 						xsmall
 							a
-								| I am an engineer who enjoys building web stuff.
-								| I work as a digital strategy consultant at PostShift.
-								| (I also play lacrosse, love cooking and spend as much time as I can in snow filled mountains.)
+								| I am an engineer who enjoys building web stuff
+								br
+								| I work as a digital strategy consultant at PostShift
+								br
+								br
+								| I play lacrosse, love cooking and spend as much time as I can in snow filled mountains.
 
-				section
-					p
-						strong
-							a.orange [
-							|  EDUCATION 
-							a.orange ]
-							| University of Warwick
-							a.orange  /
-					p
-						small
-							|General Engineering
-							a.orange  & 
-							| Business Management (MEng)<br>
-							xsmall 2008 - 2012<br>
-								| 3
-								sup rd
-								|  Year Dissertation,Modelling Wireless Relay Networks through Composite Channels
-								a.orange  : 
-								| 1
-								sup st
-								|  Class
-								br
-								| 4
-								sup th
-								|  Year Dissertation, Multi-Scale Modelling of the Pulmonary Airways
-								a.orange  : 
-								| 1
-								sup st
-								|  Class
-								br
-					p
-						xsmall
-							strong Awards 
-							a.orange  / 
-							br
-							| University of Warwick 
-							a.orange Sportsman
-							|  of the Year 2010
-							br
-							| University of Warwick Olympic 
-							a.orange Ambassador
-							|  2011 - 2012
+				
 
 				mixin job(title, description, logoSrc)
 					section
@@ -160,7 +117,49 @@ html
 								each tag in tags
 									if tag == job.getText('job.label')
 										+project(project.getText('project.Role'), project.getText('project.description'), project.getText('project.duration'), project.getImage('project.logo').url)
-
+				section
+					p
+						strong
+							a.orange [
+							|  EDUCATION 
+							a.orange ]
+							| University of Warwick
+							a.orange  /
+					p
+						small
+							|General Engineering
+							a.orange  & 
+							| Business Management (MEng)<br>
+							xsmall 2008 - 2012<br>
+								| 3
+								sup rd
+								|  Year Dissertation,Modelling Wireless Relay Networks through Composite Channels
+								a.orange  : 
+								| 1
+								sup st
+								|  Class
+								br
+								| 4
+								sup th
+								|  Year Dissertation, Multi-Scale Modelling of the Pulmonary Airways
+								a.orange  : 
+								| 1
+								sup st
+								|  Class
+								br
+					p
+						xsmall
+							strong Awards 
+							a.orange  / 
+							br
+							| University of Warwick 
+							a.orange Sportsman
+							|  of the Year 2010
+							br
+							| University of Warwick Olympic 
+							a.orange Ambassador
+							|  2011 - 2012
+				
 				section(style='text-align: left;')
 					h1 THE END
 					if (cvcontent)
